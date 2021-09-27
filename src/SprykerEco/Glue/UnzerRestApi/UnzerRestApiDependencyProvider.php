@@ -9,6 +9,7 @@ namespace SprykerEco\Glue\UnzerRestApi;
 
 use Spryker\Glue\Kernel\AbstractBundleDependencyProvider;
 use Spryker\Glue\Kernel\Container;
+use SprykerEco\Glue\UnzerRestApi\Dependency\UnzerRestApiToUnzerClientBridge;
 
 class UnzerRestApiDependencyProvider extends AbstractBundleDependencyProvider
 {
