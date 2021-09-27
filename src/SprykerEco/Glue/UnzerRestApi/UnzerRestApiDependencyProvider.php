@@ -13,6 +13,11 @@ use Spryker\Glue\Kernel\Container;
 class UnzerRestApiDependencyProvider extends AbstractBundleDependencyProvider
 {
     /**
+     * @var string
+     */
+    public const CLIENT_UNZER = 'CLIENT_UNZER';
+
+    /**
      * @param \Spryker\Glue\Kernel\Container $container
      *
      * @return \Spryker\Glue\Kernel\Container
@@ -21,6 +26,20 @@ class UnzerRestApiDependencyProvider extends AbstractBundleDependencyProvider
     {
         parent::provideDependencies($container);
 
+        $this->addUnzerClient($container);
+
         return $container;
+    }
+
+    /**
+     * @param \Spryker\Glue\Kernel\Container $container
+     *
+     * @return void
+     */
+    protected function addUnzerClient(Container $container): void
+    {
+        $container->set(static::CLIENT_UNZER, function (Container $container) {
+            return new UnzerRestApiToUnzerClientBridge($container->getLocator()->unzer()->client());
+        });
     }
 }
