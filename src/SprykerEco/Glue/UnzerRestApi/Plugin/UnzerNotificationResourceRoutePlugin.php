@@ -18,11 +18,12 @@ class UnzerNotificationResourceRoutePlugin extends AbstractPlugin implements Res
     /**
      * @var string
      */
-    private const CONTROLLER_NAME = 'unzer-notification';
+    protected const CONTROLLER_NAME = 'unzer-notification';
+
     /**
      * @var string
      */
-    private const ACTION_POST = 'post';
+    protected const ACTION_POST = 'post';
 
     /**
      * @param \Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\ResourceRouteCollectionInterface $resourceRouteCollection
