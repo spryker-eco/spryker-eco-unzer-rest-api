@@ -4,7 +4,7 @@
     "description": "Unzer PSP Glue module",
     "license": "MIT",
     "require": {
-        "php": ">=7.3",
+        "php": ">=7.4",
         "spryker/kernel": "^3.30.0"
     },
     "require-dev": {
