@@ -62,7 +62,7 @@ class UnzerNotificationProcessor implements UnzerNotificationProcessorInterface
 
         $unzerNotificationTransfer = $this->unzerClient->processNotification($unzerNotificationTransfer);
 
-        return $this->createRestSuccessResponse($unzerNotificationTransfer->getIsProcessed());
+        return $this->createRestSuccessResponse($unzerNotificationTransfer->getIsProcessedOrFail());
     }
 
     /**
