@@ -5,6 +5,7 @@
     "license": "MIT",
     "require": {
         "php": ">=7.4",
+        "spryker-eco/unzer": "dev-feature/cc-14610/cc-14662/code-migration as 1.0",
         "spryker/kernel": "^3.30.0"
     },
     "require-dev": {
@@ -36,5 +37,11 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "process-timeout": 600
-    }
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git@github.com:spryker-eco/unzer.git"
+        }
+    ]
 }
