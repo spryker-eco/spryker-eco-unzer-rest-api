@@ -11,6 +11,9 @@ use Spryker\Glue\Kernel\AbstractBundleDependencyProvider;
 use Spryker\Glue\Kernel\Container;
 use SprykerEco\Glue\UnzerRestApi\Dependency\UnzerRestApiToUnzerClientBridge;
 
+/**
+ * @method \SprykerEco\Glue\UnzerRestApi\UnzerRestApiConfig getConfig()
+ */
 class UnzerRestApiDependencyProvider extends AbstractBundleDependencyProvider
 {
     /**

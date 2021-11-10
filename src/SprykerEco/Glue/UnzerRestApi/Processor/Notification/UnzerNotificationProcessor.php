@@ -57,7 +57,7 @@ class UnzerNotificationProcessor implements UnzerNotificationProcessorInterface
         $unzerNotificationTransfer = $this->unzerNotificationMapper
             ->mapRestUnzerNotificationAttributesTransferToUnzerNotificationTransfer(
                 $restUnzerNotificationAttributesTransfer,
-                new UnzerNotificationTransfer()
+                new UnzerNotificationTransfer(),
             );
 
         $unzerNotificationTransfer = $this->unzerClient->processNotification($unzerNotificationTransfer);
