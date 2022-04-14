@@ -28,7 +28,7 @@ class UnzerNotificationProcessor implements UnzerNotificationProcessorInterface
     protected $unzerClient;
 
     /**
-     * @var \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface $resourceBuilder
+     * @var \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface
      */
     protected $resourceBuilder;
 

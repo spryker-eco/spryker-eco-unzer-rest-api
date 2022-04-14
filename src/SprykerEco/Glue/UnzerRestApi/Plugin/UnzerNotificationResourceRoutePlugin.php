@@ -32,7 +32,7 @@ class UnzerNotificationResourceRoutePlugin extends AbstractPlugin implements Res
      */
     public function configure(ResourceRouteCollectionInterface $resourceRouteCollection): ResourceRouteCollectionInterface
     {
-        $resourceRouteCollection->addPost(self::ACTION_POST, false);
+        $resourceRouteCollection->addPost(static::ACTION_POST, false);
 
         return $resourceRouteCollection;
     }
@@ -50,7 +50,7 @@ class UnzerNotificationResourceRoutePlugin extends AbstractPlugin implements Res
      */
     public function getController(): string
     {
-        return self::CONTROLLER_NAME;
+        return static::CONTROLLER_NAME;
     }
 
     /**
