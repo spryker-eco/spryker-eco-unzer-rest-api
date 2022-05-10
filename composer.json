@@ -12,9 +12,11 @@
         "spryker/symfony": "^3.7.0"
     },
     "require-dev": {
-        "phpstan/phpstan": "*",
+        "codeception/module-asserts": "^1.3.0",
+        "phpstan/phpstan": "^1.2.0",
+        "spryker/application": "^3.0.0",
         "spryker/code-sniffer": "*",
-        "spryker/testify": "*"
+        "spryker/testify": "*",
     },
     "autoload": {
         "psr-4": {
