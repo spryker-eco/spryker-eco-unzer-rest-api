@@ -6,4 +6,11 @@
     <transfer name="UnzerNotification">
         <property name="isProcessed" type="bool"/>
     </transfer>
+
+    <transfer name="RestUnzerNotificationAttributes">
+        <property name="event" type="string"/>
+        <property name="publicKey" type="string"/>
+        <property name="retrieveUrl" type="string"/>
+        <property name="paymentId" type="string"/>
+    </transfer>
 </transfers>
