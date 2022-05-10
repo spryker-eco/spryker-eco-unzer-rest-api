@@ -8,7 +8,6 @@ use Spryker\Shared\Log\LogConstants;
 use Spryker\Shared\Propel\PropelConstants;
 use Spryker\Shared\Queue\QueueConstants;
 use Spryker\Zed\Propel\PropelConfig;
-use SprykerEco\Shared\UnzerApi\UnzerApiConstants;
 
 // ----------------------------------------------------------------------------
 // ------------------------------ CODEBASE: TO REMOVE -------------------------
