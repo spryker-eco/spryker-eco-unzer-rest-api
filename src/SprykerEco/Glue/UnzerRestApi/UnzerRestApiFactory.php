@@ -9,8 +9,6 @@ namespace SprykerEco\Glue\UnzerRestApi;
 
 use Spryker\Glue\Kernel\AbstractFactory;
 use SprykerEco\Glue\UnzerRestApi\Dependency\UnzerRestApiToUnzerClientInterface;
-use SprykerEco\Glue\UnzerRestApi\Processor\Mapper\UnzerNotificationMapper;
-use SprykerEco\Glue\UnzerRestApi\Processor\Mapper\UnzerNotificationMapperInterface;
 use SprykerEco\Glue\UnzerRestApi\Processor\Notification\UnzerNotificationProcessor;
 use SprykerEco\Glue\UnzerRestApi\Processor\Notification\UnzerNotificationProcessorInterface;
 
@@ -25,18 +23,9 @@ class UnzerRestApiFactory extends AbstractFactory
     public function createUnzerNotificationProcessor(): UnzerNotificationProcessorInterface
     {
         return new UnzerNotificationProcessor(
-            $this->createUnzerNotificationMapper(),
             $this->getUnzerClient(),
             $this->getResourceBuilder(),
         );
-    }
-
-    /**
-     * @return \SprykerEco\Glue\UnzerRestApi\Processor\Mapper\UnzerNotificationMapperInterface
-     */
-    public function createUnzerNotificationMapper(): UnzerNotificationMapperInterface
-    {
-        return new UnzerNotificationMapper();
     }
 
     /**

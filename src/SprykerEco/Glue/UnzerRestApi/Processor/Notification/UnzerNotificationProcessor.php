@@ -12,16 +12,10 @@ use Generated\Shared\Transfer\UnzerNotificationTransfer;
 use Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface;
 use Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface;
 use SprykerEco\Glue\UnzerRestApi\Dependency\UnzerRestApiToUnzerClientInterface;
-use SprykerEco\Glue\UnzerRestApi\Processor\Mapper\UnzerNotificationMapperInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 class UnzerNotificationProcessor implements UnzerNotificationProcessorInterface
 {
-    /**
-     * @var \SprykerEco\Glue\UnzerRestApi\Processor\Mapper\UnzerNotificationMapperInterface
-     */
-    protected $unzerNotificationMapper;
-
     /**
      * @var \SprykerEco\Glue\UnzerRestApi\Dependency\UnzerRestApiToUnzerClientInterface
      */
@@ -30,21 +24,18 @@ class UnzerNotificationProcessor implements UnzerNotificationProcessorInterface
     /**
      * @var \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface
      */
-    protected $resourceBuilder;
+    protected $restResourceBuilder;
 
     /**
-     * @param \SprykerEco\Glue\UnzerRestApi\Processor\Mapper\UnzerNotificationMapperInterface $unzerNotificationMapper
      * @param \SprykerEco\Glue\UnzerRestApi\Dependency\UnzerRestApiToUnzerClientInterface $unzerClient
      * @param \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface $restResourceBuilder
      */
     public function __construct(
-        UnzerNotificationMapperInterface $unzerNotificationMapper,
         UnzerRestApiToUnzerClientInterface $unzerClient,
         RestResourceBuilderInterface $restResourceBuilder
     ) {
-        $this->unzerNotificationMapper = $unzerNotificationMapper;
         $this->unzerClient = $unzerClient;
-        $this->resourceBuilder = $restResourceBuilder;
+        $this->restResourceBuilder = $restResourceBuilder;
     }
 
     /**
@@ -54,15 +45,12 @@ class UnzerNotificationProcessor implements UnzerNotificationProcessorInterface
      */
     public function processNotification(RestUnzerNotificationAttributesTransfer $restUnzerNotificationAttributesTransfer): RestResponseInterface
     {
-        $unzerNotificationTransfer = $this->unzerNotificationMapper
-            ->mapRestUnzerNotificationAttributesTransferToUnzerNotificationTransfer(
-                $restUnzerNotificationAttributesTransfer,
-                new UnzerNotificationTransfer(),
-            );
+        $unzerNotificationTransfer = (new UnzerNotificationTransfer())
+            ->fromArray($restUnzerNotificationAttributesTransfer->toArray(), true);
 
         $unzerNotificationTransfer = $this->unzerClient->processNotification($unzerNotificationTransfer);
 
-        return $this->createRestSuccessResponse($unzerNotificationTransfer->getIsProcessedOrFail());
+        return $this->createRestResponse($unzerNotificationTransfer->getIsProcessedOrFail());
     }
 
     /**
@@ -70,11 +58,11 @@ class UnzerNotificationProcessor implements UnzerNotificationProcessorInterface
      *
      * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
      */
-    protected function createRestSuccessResponse(bool $isProcessed): RestResponseInterface
+    protected function createRestResponse(bool $isProcessed): RestResponseInterface
     {
         $responseCode = $isProcessed ? Response::HTTP_OK : Response::HTTP_BAD_REQUEST;
 
-        return $this->resourceBuilder
+        return $this->restResourceBuilder
             ->createRestResponse()
             ->setStatus($responseCode);
     }

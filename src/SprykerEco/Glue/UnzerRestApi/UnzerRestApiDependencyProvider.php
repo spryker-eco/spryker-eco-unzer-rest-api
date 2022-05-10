@@ -28,9 +28,9 @@ class UnzerRestApiDependencyProvider extends AbstractBundleDependencyProvider
      */
     public function provideDependencies(Container $container): Container
     {
-        parent::provideDependencies($container);
+        $container = parent::provideDependencies($container);
 
-        $this->addUnzerClient($container);
+        $container = $this->addUnzerClient($container);
 
         return $container;
     }
@@ -38,12 +38,14 @@ class UnzerRestApiDependencyProvider extends AbstractBundleDependencyProvider
     /**
      * @param \Spryker\Glue\Kernel\Container $container
      *
-     * @return void
+     * @return \Spryker\Glue\Kernel\Container
      */
-    protected function addUnzerClient(Container $container): void
+    protected function addUnzerClient(Container $container): Container
     {
         $container->set(static::CLIENT_UNZER, function (Container $container) {
             return new UnzerRestApiToUnzerClientBridge($container->getLocator()->unzer()->client());
         });
+
+        return $container;
     }
 }
