@@ -91,7 +91,6 @@ jobs:
               run: composer --version
 
             - name: Composer install
-                #        if: steps.cache.outputs.cache-hit != 'true'
               run: composer install --prefer-dist --no-interaction --optimize-autoloader
 
             - name: PHP syntax validation
@@ -99,6 +98,9 @@ jobs:
 
             - name: Check codestyle checks
               run: composer cs-check
+
+            - name: Run codeception tests
+              run: composer test
 
             - name: Run PHPStan checks
               run: composer stan

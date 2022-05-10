@@ -60,5 +60,3 @@ $config[PropelConstants::ZED_DB_PASSWORD] = 'secret'; //getenv('SPRYKER_DB_PASSW
 $config[PropelConstants::ZED_DB_DATABASE] = 'eu-docker';
 $config[PropelConstants::ZED_DB_REPLICAS] = json_decode(getenv('SPRYKER_DB_REPLICAS') ?: '[]', true);
 $config[PropelConstants::USE_SUDO_TO_MANAGE_DATABASE] = false;
-
-$config[UnzerApiConstants::MARKETPLACE_BASKET_RESOURCE_URL] = 'https://api.unzer.com/v2/marketplace/baskets';
