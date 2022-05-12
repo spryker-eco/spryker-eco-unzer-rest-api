@@ -3,6 +3,7 @@
 use Monolog\Logger;
 use Spryker\Shared\Application\Log\Config\SprykerLoggerConfig;
 use Spryker\Shared\ErrorHandler\ErrorHandlerConstants;
+use Spryker\Shared\Event\EventConstants;
 use Spryker\Shared\Kernel\KernelConstants;
 use Spryker\Shared\Log\LogConstants;
 use Spryker\Shared\Propel\PropelConstants;
@@ -35,6 +36,7 @@ $config[ErrorHandlerConstants::ERROR_LEVEL_LOG_ONLY] = E_DEPRECATED | E_USER_DEP
 $config[LogConstants::LOGGER_CONFIG] = SprykerLoggerConfig::class;
 $config[LogConstants::LOG_LEVEL] = Logger::INFO;
 $config[PropelConstants::LOG_FILE_PATH]
+    = $config[EventConstants::LOG_FILE_PATH]
     = $config[LogConstants::LOG_FILE_PATH_YVES]
     = $config[LogConstants::LOG_FILE_PATH_ZED]
     = $config[LogConstants::LOG_FILE_PATH_GLUE]
