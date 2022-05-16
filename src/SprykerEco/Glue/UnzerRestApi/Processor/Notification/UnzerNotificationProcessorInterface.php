@@ -7,15 +7,15 @@
 
 namespace SprykerEco\Glue\UnzerRestApi\Processor\Notification;
 
-use Generated\Shared\Transfer\RestUnzerNotificationAttributesTransfer;
+use Generated\Shared\Transfer\RestUnzerNotificationsAttributesTransfer;
 use Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface;
 
 interface UnzerNotificationProcessorInterface
 {
     /**
-     * @param \Generated\Shared\Transfer\RestUnzerNotificationAttributesTransfer $restUnzerNotificationAttributesTransfer
+     * @param \Generated\Shared\Transfer\RestUnzerNotificationsAttributesTransfer $restUnzerNotificationsAttributesTransfer
      *
      * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
      */
-    public function processNotification(RestUnzerNotificationAttributesTransfer $restUnzerNotificationAttributesTransfer): RestResponseInterface;
+    public function processNotification(RestUnzerNotificationsAttributesTransfer $restUnzerNotificationsAttributesTransfer): RestResponseInterface;
 }

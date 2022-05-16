@@ -7,7 +7,7 @@
 
 namespace SprykerEco\Glue\UnzerRestApi\Plugin\GlueApplication;
 
-use Generated\Shared\Transfer\RestUnzerNotificationAttributesTransfer;
+use Generated\Shared\Transfer\RestUnzerNotificationsAttributesTransfer;
 use Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\ResourceRouteCollectionInterface;
 use Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\ResourceRoutePluginInterface;
 use Spryker\Glue\Kernel\AbstractPlugin;
@@ -58,6 +58,6 @@ class UnzerNotificationResourceRoutePlugin extends AbstractPlugin implements Res
      */
     public function getResourceAttributesClassName(): string
     {
-        return RestUnzerNotificationAttributesTransfer::class;
+        return RestUnzerNotificationsAttributesTransfer::class;
     }
 }

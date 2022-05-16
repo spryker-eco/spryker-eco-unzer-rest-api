@@ -7,7 +7,7 @@
 
 namespace SprykerEco\Glue\UnzerRestApi\Controller;
 
-use Generated\Shared\Transfer\RestUnzerNotificationAttributesTransfer;
+use Generated\Shared\Transfer\RestUnzerNotificationsAttributesTransfer;
 use Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface;
 use Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface;
 use Spryker\Glue\Kernel\Controller\AbstractController;
@@ -41,13 +41,13 @@ class UnzerNotificationsController extends AbstractController
      * })
      *
      * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     * @param \Generated\Shared\Transfer\RestUnzerNotificationAttributesTransfer $notificationTransfer
+     * @param \Generated\Shared\Transfer\RestUnzerNotificationsAttributesTransfer $notificationTransfer
      *
      * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
      */
     public function postAction(
         RestRequestInterface $restRequest,
-        RestUnzerNotificationAttributesTransfer $notificationTransfer
+        RestUnzerNotificationsAttributesTransfer $notificationTransfer
     ): RestResponseInterface {
         return $this->getFactory()
             ->createUnzerNotificationProcessor()
