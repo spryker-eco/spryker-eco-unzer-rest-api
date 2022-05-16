@@ -5,7 +5,7 @@
  * For full license information, please view the LICENSE file that was distributed with this source code.
  */
 
-namespace SprykerEco\Glue\UnzerRestApi\Plugin;
+namespace SprykerEco\Glue\UnzerRestApi\Plugin\GlueApplication;
 
 use Generated\Shared\Transfer\RestUnzerNotificationAttributesTransfer;
 use Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\ResourceRouteCollectionInterface;
