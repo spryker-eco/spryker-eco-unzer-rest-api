@@ -15,7 +15,7 @@ use Spryker\Glue\Kernel\Controller\AbstractController;
 /**
  * @method \SprykerEco\Glue\UnzerRestApi\UnzerRestApiFactory getFactory()
  */
-class UnzerNotificationController extends AbstractController
+class UnzerNotificationsController extends AbstractController
 {
     /**
      * @Glue({

@@ -42,7 +42,7 @@ class UnzerNotificationResourceRoutePlugin extends AbstractPlugin implements Res
      */
     public function getResourceType(): string
     {
-        return UnzerRestApiConfig::UNZER_NOTIFICATION;
+        return UnzerRestApiConfig::UNZER_NOTIFICATIONS;
     }
 
     /**
