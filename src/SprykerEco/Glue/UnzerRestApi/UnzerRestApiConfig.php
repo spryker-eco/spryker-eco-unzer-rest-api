@@ -16,5 +16,5 @@ class UnzerRestApiConfig extends AbstractBundleConfig
      *
      * @var string
      */
-    public const UNZER_NOTIFICATION = 'unzer-notification';
+    public const UNZER_NOTIFICATIONS = 'unzer-notification';
 }
