@@ -13,12 +13,12 @@ use Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\ResourceRoutePluginI
 use Spryker\Glue\Kernel\AbstractPlugin;
 use SprykerEco\Glue\UnzerRestApi\UnzerRestApiConfig;
 
-class UnzerNotificationResourceRoutePlugin extends AbstractPlugin implements ResourceRoutePluginInterface
+class UnzerNotificationsResourceRoutePlugin extends AbstractPlugin implements ResourceRoutePluginInterface
 {
     /**
      * @var string
      */
-    protected const CONTROLLER_NAME = 'unzer-notification';
+    protected const CONTROLLER_NAME = 'unzer-notifications';
 
     /**
      * @var string
