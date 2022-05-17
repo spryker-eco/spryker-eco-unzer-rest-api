@@ -26,6 +26,11 @@ class UnzerNotificationsResourceRoutePlugin extends AbstractPlugin implements Re
     protected const ACTION_POST = 'post';
 
     /**
+     * {@inheritDoc}
+     * - Configures available actions for `unzer-notifications` resource.
+     *
+     * @api
+     *
      * @param \Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\ResourceRouteCollectionInterface $resourceRouteCollection
      *
      * @return \Spryker\Glue\GlueApplicationExtension\Dependency\Plugin\ResourceRouteCollectionInterface
@@ -38,14 +43,22 @@ class UnzerNotificationsResourceRoutePlugin extends AbstractPlugin implements Re
     }
 
     /**
+     * {@inheritDoc}
+     *
+     * @api
+     *
      * @return string
      */
     public function getResourceType(): string
     {
-        return UnzerRestApiConfig::UNZER_NOTIFICATIONS;
+        return UnzerRestApiConfig::RESOURCE_UNZER_NOTIFICATIONS;
     }
 
     /**
+     * {@inheritDoc}
+     *
+     * @api
+     *
      * @return string
      */
     public function getController(): string
@@ -54,6 +67,10 @@ class UnzerNotificationsResourceRoutePlugin extends AbstractPlugin implements Re
     }
 
     /**
+     * {@inheritDoc}
+     *
+     * @api
+     *
      * @return string
      */
     public function getResourceAttributesClassName(): string
