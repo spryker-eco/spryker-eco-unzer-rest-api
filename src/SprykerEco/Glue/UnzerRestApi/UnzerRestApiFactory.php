@@ -24,7 +24,6 @@ class UnzerRestApiFactory extends AbstractFactory
     {
         return new UnzerNotificationProcessor(
             $this->getUnzerClient(),
-            $this->getResourceBuilder(),
         );
     }
 

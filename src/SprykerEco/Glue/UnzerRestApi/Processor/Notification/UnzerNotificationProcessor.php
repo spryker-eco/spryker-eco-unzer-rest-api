@@ -7,10 +7,9 @@
 
 namespace SprykerEco\Glue\UnzerRestApi\Processor\Notification;
 
-use Generated\Shared\Transfer\RestUnzerNotificationsAttributesTransfer;
+use Generated\Shared\Transfer\GlueResponseTransfer;
+use Generated\Shared\Transfer\UnzerNotificationAttributesTransfer;
 use Generated\Shared\Transfer\UnzerNotificationTransfer;
-use Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface;
-use Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface;
 use SprykerEco\Glue\UnzerRestApi\Dependency\UnzerRestApiToUnzerClientInterface;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -22,31 +21,22 @@ class UnzerNotificationProcessor implements UnzerNotificationProcessorInterface
     protected $unzerClient;
 
     /**
-     * @var \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface
-     */
-    protected $restResourceBuilder;
-
-    /**
      * @param \SprykerEco\Glue\UnzerRestApi\Dependency\UnzerRestApiToUnzerClientInterface $unzerClient
-     * @param \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface $restResourceBuilder
      */
-    public function __construct(
-        UnzerRestApiToUnzerClientInterface $unzerClient,
-        RestResourceBuilderInterface $restResourceBuilder
-    ) {
+    public function __construct(UnzerRestApiToUnzerClientInterface $unzerClient)
+    {
         $this->unzerClient = $unzerClient;
-        $this->restResourceBuilder = $restResourceBuilder;
     }
 
     /**
-     * @param \Generated\Shared\Transfer\RestUnzerNotificationsAttributesTransfer $restUnzerNotificationsAttributesTransfer
+     * @param \Generated\Shared\Transfer\UnzerNotificationAttributesTransfer $unzerNotificationAttributesTransfer
      *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
+     * @return \Generated\Shared\Transfer\GlueResponseTransfer
      */
-    public function processNotification(RestUnzerNotificationsAttributesTransfer $restUnzerNotificationsAttributesTransfer): RestResponseInterface
+    public function processNotification(UnzerNotificationAttributesTransfer $unzerNotificationAttributesTransfer): GlueResponseTransfer
     {
         $unzerNotificationTransfer = (new UnzerNotificationTransfer())
-            ->fromArray($restUnzerNotificationsAttributesTransfer->toArray(), true);
+            ->fromArray($unzerNotificationAttributesTransfer->toArray(), true);
 
         $unzerNotificationTransfer = $this->unzerClient->processNotification($unzerNotificationTransfer);
 
@@ -56,14 +46,12 @@ class UnzerNotificationProcessor implements UnzerNotificationProcessorInterface
     /**
      * @param bool $isProcessed
      *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
+     * @return \Generated\Shared\Transfer\GlueResponseTransfer
      */
-    protected function createRestResponse(bool $isProcessed): RestResponseInterface
+    protected function createRestResponse(bool $isProcessed): GlueResponseTransfer
     {
-        $responseCode = $isProcessed ? Response::HTTP_OK : Response::HTTP_BAD_REQUEST;
+        $responseStatusCode = $isProcessed ? Response::HTTP_OK : Response::HTTP_BAD_REQUEST;
 
-        return $this->restResourceBuilder
-            ->createRestResponse()
-            ->setStatus($responseCode);
+        return (new GlueResponseTransfer())->setHttpStatus($responseStatusCode);
     }
 }

@@ -2,9 +2,13 @@
 <transfers xmlns="spryker:transfer-01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="spryker:transfer-01 http://static.spryker.com/transfer-01.xsd">
     <transfer name="UnzerNotification">
         <property name="isProcessed" type="bool"/>
+        <property name="event" type="string"/>
+        <property name="publicKey" type="string"/>
+        <property name="retrieveUrl" type="string"/>
+        <property name="paymentId" type="string"/>
     </transfer>
 
-    <transfer name="RestUnzerNotificationsAttributes">
+    <transfer name="UnzerNotificationAttributes">
         <property name="event" type="string"/>
         <property name="publicKey" type="string"/>
         <property name="retrieveUrl" type="string"/>
