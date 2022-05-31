@@ -16,7 +16,7 @@
     </transfer>
 
     <transfer name="GlueResponse">
-        <property name="status" type="string" deprecated="Use `httpStatus` property for HTTP status."/>
+        <property name="httpStatus" type="int"/>
     </transfer>
 
     <transfer name="GlueResourceMethodCollection">
