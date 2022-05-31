@@ -11,4 +11,4 @@ UnzerRestApi module provides Glue API endpoints for [Unzer](https://www.unzer.co
 composer require spryker-eco/unzer-rest-api
 ```
 ## Documentation
-[Documentation](https://documentation.spryker.com/industry_partners/payment/unzer-rest-api/unzer-rest-api-details.htm)
+[Documentation](https://docs.spryker.com/industry_partners/payment/unzer-rest-api/unzer-rest-api-details.htm)
