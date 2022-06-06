@@ -1,0 +1,8 @@
+parameters:
+    level: 8
+    paths:
+        - src/
+    bootstrapFiles:
+        - tests/bootstrap.php
+    ignoreErrors:
+        - '#Call to method .+\(\) on an unknown class Generated\\.+\\Ide\\AutoCompletion.#'
