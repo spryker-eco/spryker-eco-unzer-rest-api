@@ -16,27 +16,25 @@ use Spryker\Glue\Kernel\AbstractPlugin;
 class UnzerCheckoutDataResponseMapperPlugin extends AbstractPlugin implements CheckoutDataResponseMapperPluginInterface
 {
     /**
-     * Specification:
-     * - Fills `RestCheckoutDataResponseAttributesTransfer.UnzerPublicKey` property using `UnzerCredentials`, `UnzerKeypair`, `PublicKey` properties of `RestCheckoutDataResponseTransfer`.
+     * {@inheritDoc}
+     * - Maps `RestCheckoutDataTransfer.unzerCredentials.unzerKeypair.publicKey` to `RestCheckoutDataResponseAttributesTransfer.unzerPublicKey`.
      *
      * @api
      *
      * @param \Generated\Shared\Transfer\RestCheckoutDataTransfer $restCheckoutDataTransfer
      * @param \Generated\Shared\Transfer\RestCheckoutRequestAttributesTransfer $restCheckoutRequestAttributesTransfer
-     * @param \Generated\Shared\Transfer\RestCheckoutDataResponseAttributesTransfer $restCheckoutResponseAttributesTransfer
+     * @param \Generated\Shared\Transfer\RestCheckoutDataResponseAttributesTransfer $restCheckoutDataResponseAttributesTransfer
      *
      * @return \Generated\Shared\Transfer\RestCheckoutDataResponseAttributesTransfer
+
      */
     public function mapRestCheckoutDataResponseTransferToRestCheckoutDataResponseAttributesTransfer(
         RestCheckoutDataTransfer $restCheckoutDataTransfer,
         RestCheckoutRequestAttributesTransfer $restCheckoutRequestAttributesTransfer,
-        RestCheckoutDataResponseAttributesTransfer $restCheckoutResponseAttributesTransfer
+        RestCheckoutDataResponseAttributesTransfer $restCheckoutDataResponseAttributesTransfer
     ): RestCheckoutDataResponseAttributesTransfer {
-        $unzerPublicKey = $restCheckoutDataTransfer->getQuoteOrFail()
-            ->getUnzerCredentialsOrFail()
-            ->getUnzerKeypairOrFail()
-            ->getPublicKeyOrFail();
-
-        return $restCheckoutResponseAttributesTransfer->setUnzerPublicKey($unzerPublicKey);
+        return $this->getFactory()
+            ->createRestCheckoutDataResponseAttributesMapper()
+            ->mapRestCheckoutData($restCheckoutDataResponseAttributesTransfer, $restCheckoutDataTransfer);
     }
 }
