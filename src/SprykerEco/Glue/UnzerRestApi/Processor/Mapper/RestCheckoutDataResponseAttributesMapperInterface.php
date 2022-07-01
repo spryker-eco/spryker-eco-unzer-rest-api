@@ -18,7 +18,7 @@ interface RestCheckoutDataResponseAttributesMapperInterface
      *
      * @return \Generated\Shared\Transfer\RestCheckoutDataResponseAttributesTransfer
      */
-    public function mapRestCheckoutData(
+    public function mapRestCheckoutDataTransferToRestCheckoutDataResponseAttributesTransfer(
         RestCheckoutDataResponseAttributesTransfer $restCheckoutDataResponseAttributesTransfer,
         RestCheckoutDataTransfer $restCheckoutDataTransfer
     ): RestCheckoutDataResponseAttributesTransfer;

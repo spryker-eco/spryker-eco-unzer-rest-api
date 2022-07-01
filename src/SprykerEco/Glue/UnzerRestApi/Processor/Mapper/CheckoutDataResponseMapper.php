@@ -10,7 +10,7 @@ namespace SprykerEco\Glue\UnzerRestApi\Processor\Mapper;
 use Generated\Shared\Transfer\RestCheckoutDataResponseAttributesTransfer;
 use Generated\Shared\Transfer\RestCheckoutDataTransfer;
 
-class RestCheckoutDataResponseAttributesMapper implements RestCheckoutDataResponseAttributesMapperInterface
+class CheckoutDataResponseMapper implements RestCheckoutDataResponseAttributesMapperInterface
 {
     /**
      * @param \SprykerEco\Glue\UnzerRestApi\Processor\Mapper\RestCheckoutDataResponseAttributesTransfer $restCheckoutDataResponseAttributesTransfer
@@ -18,7 +18,7 @@ class RestCheckoutDataResponseAttributesMapper implements RestCheckoutDataRespon
      *
      * @return \SprykerEco\Glue\UnzerRestApi\Processor\Mapper\RestCheckoutDataResponseAttributesTransfer
      */
-    public function mapRestCheckoutData(
+    public function mapRestCheckoutDataTransferToRestCheckoutDataResponseAttributesTransfer(
         RestCheckoutDataResponseAttributesTransfer $restCheckoutDataResponseAttributesTransfer,
         RestCheckoutDataTransfer $restCheckoutDataTransfer
     ): RestCheckoutDataResponseAttributesTransfer {
