@@ -13,6 +13,9 @@ use Generated\Shared\Transfer\RestCheckoutRequestAttributesTransfer;
 use Spryker\Glue\CheckoutRestApiExtension\Dependency\Plugin\CheckoutDataResponseMapperPluginInterface;
 use Spryker\Glue\Kernel\AbstractPlugin;
 
+/**
+ * @method \SprykerEco\Glue\UnzerRestApi\UnzerRestApiFactory getFactory()
+ */
 class UnzerCheckoutDataResponseMapperPlugin extends AbstractPlugin implements CheckoutDataResponseMapperPluginInterface
 {
     /**
@@ -35,6 +38,6 @@ class UnzerCheckoutDataResponseMapperPlugin extends AbstractPlugin implements Ch
     ): RestCheckoutDataResponseAttributesTransfer {
         return $this->getFactory()
             ->createCheckoutDataResponseMapper()
-            ->mapRestCheckoutData($restCheckoutDataResponseAttributesTransfer, $restCheckoutDataTransfer);
+            ->mapRestCheckoutDataTransferToRestCheckoutDataResponseAttributesTransfer($restCheckoutDataResponseAttributesTransfer, $restCheckoutDataTransfer);
     }
 }
