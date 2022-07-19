@@ -10,7 +10,7 @@ namespace SprykerEco\Glue\UnzerRestApi\Processor\Mapper;
 use Generated\Shared\Transfer\RestCheckoutDataResponseAttributesTransfer;
 use Generated\Shared\Transfer\RestCheckoutDataTransfer;
 
-interface RestCheckoutDataResponseAttributesMapperInterface
+class RestCheckoutDataResponseAttributesMapper implements RestCheckoutDataResponseAttributesMapperInterface
 {
     /**
      * @param \Generated\Shared\Transfer\RestCheckoutDataTransfer $restCheckoutDataTransfer
@@ -21,5 +21,12 @@ interface RestCheckoutDataResponseAttributesMapperInterface
     public function mapRestCheckoutDataTransferToRestCheckoutDataResponseAttributesTransfer(
         RestCheckoutDataTransfer $restCheckoutDataTransfer,
         RestCheckoutDataResponseAttributesTransfer $restCheckoutDataResponseAttributesTransfer
-    ): RestCheckoutDataResponseAttributesTransfer;
+    ): RestCheckoutDataResponseAttributesTransfer {
+        $unzerPublicKey = $restCheckoutDataTransfer->getQuoteOrFail()
+            ->getUnzerCredentialsOrFail()
+            ->getUnzerKeypairOrFail()
+            ->getPublicKeyOrFail();
+
+        return $restCheckoutDataResponseAttributesTransfer->setUnzerPublicKey($unzerPublicKey);
+    }
 }
