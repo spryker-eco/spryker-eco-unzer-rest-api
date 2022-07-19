@@ -9,7 +9,7 @@ namespace SprykerEco\Glue\UnzerRestApi;
 
 use Spryker\Glue\Kernel\AbstractFactory;
 use SprykerEco\Glue\UnzerRestApi\Dependency\UnzerRestApiToUnzerClientInterface;
-use SprykerEco\Glue\UnzerRestApi\Processor\Mapper\CheckoutDataResponseMapper;
+use SprykerEco\Glue\UnzerRestApi\Processor\Mapper\RestCheckoutDataResponseAttributesMapper;
 use SprykerEco\Glue\UnzerRestApi\Processor\Mapper\RestCheckoutDataResponseAttributesMapperInterface;
 use SprykerEco\Glue\UnzerRestApi\Processor\Notification\UnzerNotificationProcessor;
 use SprykerEco\Glue\UnzerRestApi\Processor\Notification\UnzerNotificationProcessorInterface;
@@ -32,9 +32,9 @@ class UnzerRestApiFactory extends AbstractFactory
     /**
      * @return \SprykerEco\Glue\UnzerRestApi\Processor\Mapper\RestCheckoutDataResponseAttributesMapperInterface
      */
-    public function createCheckoutDataResponseMapper(): RestCheckoutDataResponseAttributesMapperInterface
+    public function createRestCheckoutDataResponseAttributesMapper(): RestCheckoutDataResponseAttributesMapperInterface
     {
-        return new CheckoutDataResponseMapper();
+        return new RestCheckoutDataResponseAttributesMapper();
     }
 
     /**

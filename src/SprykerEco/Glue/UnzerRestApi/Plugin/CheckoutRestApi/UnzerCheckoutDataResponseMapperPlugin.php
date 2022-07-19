@@ -37,7 +37,7 @@ class UnzerCheckoutDataResponseMapperPlugin extends AbstractPlugin implements Ch
         RestCheckoutDataResponseAttributesTransfer $restCheckoutDataResponseAttributesTransfer
     ): RestCheckoutDataResponseAttributesTransfer {
         return $this->getFactory()
-            ->createCheckoutDataResponseMapper()
+            ->createRestCheckoutDataResponseAttributesMapper()
             ->mapRestCheckoutDataTransferToRestCheckoutDataResponseAttributesTransfer(
                 $restCheckoutDataTransfer,
                 $restCheckoutDataResponseAttributesTransfer,
