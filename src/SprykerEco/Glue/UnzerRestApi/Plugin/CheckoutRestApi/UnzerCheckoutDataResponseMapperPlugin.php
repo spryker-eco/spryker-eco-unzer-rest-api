@@ -21,6 +21,7 @@ class UnzerCheckoutDataResponseMapperPlugin extends AbstractPlugin implements Ch
     /**
      * {@inheritDoc}
      * - Maps `RestCheckoutDataTransfer.unzerCredentials.unzerKeypair.publicKey` to `RestCheckoutDataResponseAttributesTransfer.unzerPublicKey`.
+     * - Requires `RestCheckoutDataTransfer.quote.unzerCredentials.unzerKeypair.publicKey` to be set.
      *
      * @api
      *
@@ -29,7 +30,6 @@ class UnzerCheckoutDataResponseMapperPlugin extends AbstractPlugin implements Ch
      * @param \Generated\Shared\Transfer\RestCheckoutDataResponseAttributesTransfer $restCheckoutDataResponseAttributesTransfer
      *
      * @return \Generated\Shared\Transfer\RestCheckoutDataResponseAttributesTransfer
-
      */
     public function mapRestCheckoutDataResponseTransferToRestCheckoutDataResponseAttributesTransfer(
         RestCheckoutDataTransfer $restCheckoutDataTransfer,
@@ -39,8 +39,8 @@ class UnzerCheckoutDataResponseMapperPlugin extends AbstractPlugin implements Ch
         return $this->getFactory()
             ->createCheckoutDataResponseMapper()
             ->mapRestCheckoutDataTransferToRestCheckoutDataResponseAttributesTransfer(
-                $restCheckoutDataResponseAttributesTransfer,
                 $restCheckoutDataTransfer,
+                $restCheckoutDataResponseAttributesTransfer,
             );
     }
 }
