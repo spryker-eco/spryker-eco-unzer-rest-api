@@ -28,4 +28,24 @@
         <property name="attributes" type="string"/>
         <property name="action" type="string"/>
     </transfer>
+
+    <transfer name="RestCheckoutData">
+        <property name="quote" type="Quote"/>
+    </transfer>
+
+    <transfer name="Quote">
+        <property name="unzerCredentials" type="UnzerCredentials"/>
+    </transfer>
+
+    <transfer name="UnzerCredentials">
+        <property name="unzerKeypair" type="UnzerKeypair"/>
+    </transfer>
+
+    <transfer name="UnzerKeypair">
+        <property name="publicKey" type="string"/>
+    </transfer>
+
+    <transfer name="RestCheckoutDataResponseAttributes">
+        <property name="unzerPublicKey" type="string"/>
+    </transfer>
 </transfers>
