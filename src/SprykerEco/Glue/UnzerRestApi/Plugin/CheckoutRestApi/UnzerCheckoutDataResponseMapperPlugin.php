@@ -20,8 +20,8 @@ class UnzerCheckoutDataResponseMapperPlugin extends AbstractPlugin implements Ch
 {
     /**
      * {@inheritDoc}
-     * - Maps `RestCheckoutDataTransfer.unzerCredentials.unzerKeypair.publicKey` to `RestCheckoutDataResponseAttributesTransfer.unzerPublicKey`.
      * - Requires `RestCheckoutDataTransfer.quote.unzerCredentials.unzerKeypair.publicKey` to be set.
+     * - Maps `RestCheckoutDataTransfer.unzerCredentials.unzerKeypair.publicKey` to `RestCheckoutDataResponseAttributesTransfer.unzerPublicKey`.
      *
      * @api
      *
