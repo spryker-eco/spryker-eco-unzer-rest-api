@@ -10,6 +10,7 @@ namespace SprykerEco\Zed\UnzerRestApi\Business;
 use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
 use SprykerEco\Zed\UnzerRestApi\Business\Expander\QuoteExpander;
 use SprykerEco\Zed\UnzerRestApi\Business\Expander\QuoteExpanderInterface;
+use SprykerEco\Zed\UnzerRestApi\Dependency\Facade\UnzerRestApiToUnzerFacadeInterface;
 use SprykerEco\Zed\UnzerRestApi\UnzerRestApiDependencyProvider;
 
 /**
@@ -18,7 +19,7 @@ use SprykerEco\Zed\UnzerRestApi\UnzerRestApiDependencyProvider;
 class UnzerRestApiBusinessFactory extends AbstractBusinessFactory
 {
     /**
-     * @return \SprykerEco\Zed\UnzerRestApi\Business\QuoteExpanderInterface
+     * @return \SprykerEco\Zed\UnzerRestApi\Business\Expander\QuoteExpanderInterface
      */
     public function createQuoteExpander(): QuoteExpanderInterface
     {
@@ -28,9 +29,9 @@ class UnzerRestApiBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @return \Spryker\Zed\SalesOrderThresholdsRestApi\Dependency\Facade\SalesOrderThresholdsRestApiToSalesOrderThresholdFacadeInterface
+     * @return \SprykerEco\Zed\UnzerRestApi\Dependency\Facade\UnzerRestApiToUnzerFacadeInterface
      */
-    public function getUnzerFacade(): SalesOrderThresholdsRestApiToSalesOrderThresholdFacadeInterface
+    public function getUnzerFacade(): UnzerRestApiToUnzerFacadeInterface
     {
         return $this->getProvidedDependency(UnzerRestApiDependencyProvider::FACADE_UNZER);
     }
