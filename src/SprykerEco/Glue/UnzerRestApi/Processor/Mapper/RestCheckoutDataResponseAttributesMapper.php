@@ -22,6 +22,10 @@ class RestCheckoutDataResponseAttributesMapper implements RestCheckoutDataRespon
         RestCheckoutDataTransfer $restCheckoutDataTransfer,
         RestCheckoutDataResponseAttributesTransfer $restCheckoutDataResponseAttributesTransfer
     ): RestCheckoutDataResponseAttributesTransfer {
+        if ($restCheckoutDataTransfer->getQuoteOrFail()->getUnzerCredentials() === null) {
+            return $restCheckoutDataResponseAttributesTransfer;
+        }
+
         $unzerPublicKey = $restCheckoutDataTransfer->getQuoteOrFail()
             ->getUnzerCredentialsOrFail()
             ->getUnzerKeypairOrFail()
