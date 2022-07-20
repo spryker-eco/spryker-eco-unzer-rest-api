@@ -35,11 +35,6 @@ class UnzerCheckoutDataExpanderPlugin extends AbstractPlugin implements Checkout
         RestCheckoutDataTransfer $restCheckoutDataTransfer,
         RestCheckoutRequestAttributesTransfer $restCheckoutRequestAttributesTransfer
     ): RestCheckoutDataTransfer {
-        $quoteTransfer = $this->getFacade()
-            ->expandQuoteWithUnzerCredentials(
-                $restCheckoutDataTransfer->getQuoteOrFail(),
-            );
-
-        return $restCheckoutDataTransfer->setQuote($quoteTransfer);
+        return $this->getFacade()->expandCheckoutData($restCheckoutDataTransfer);
     }
 }

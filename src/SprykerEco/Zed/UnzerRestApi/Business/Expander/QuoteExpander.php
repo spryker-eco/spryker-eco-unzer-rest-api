@@ -7,7 +7,7 @@
 
 namespace SprykerEco\Zed\UnzerRestApi\Business\Expander;
 
-use Generated\Shared\Transfer\QuoteTransfer;
+use Generated\Shared\Transfer\RestCheckoutDataTransfer;
 use SprykerEco\Zed\UnzerRestApi\Dependency\Facade\UnzerRestApiToUnzerFacadeInterface;
 
 class QuoteExpander implements QuoteExpanderInterface
@@ -15,7 +15,7 @@ class QuoteExpander implements QuoteExpanderInterface
     /**
      * @var \SprykerEco\Zed\UnzerRestApi\Dependency\Facade\UnzerRestApiToUnzerFacadeInterface
      */
-    protected $unzerFacade;
+    protected UnzerRestApiToUnzerFacadeInterface $unzerFacade;
 
     /**
      * @param \SprykerEco\Zed\UnzerRestApi\Dependency\Facade\UnzerRestApiToUnzerFacadeInterface $unzerFacade
@@ -26,12 +26,17 @@ class QuoteExpander implements QuoteExpanderInterface
     }
 
     /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
+     * @param \Generated\Shared\Transfer\RestCheckoutDataTransfer $restCheckoutDataTransfer
      *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
+     * @return \Generated\Shared\Transfer\RestCheckoutDataTransfer
      */
-    public function expandQuoteWithUnzerCredentials(QuoteTransfer $quoteTransfer): QuoteTransfer
+    public function expandQuoteWithUnzerCredentials(RestCheckoutDataTransfer $restCheckoutDataTransfer): RestCheckoutDataTransfer
     {
-        return $this->unzerFacade->expandQuoteWithUnzerCredentials($quoteTransfer);
+        $quoteTransfer = $this->unzerFacade
+            ->expandQuoteWithUnzerCredentials(
+                $restCheckoutDataTransfer->getQuoteOrFail(),
+            );
+
+        return $restCheckoutDataTransfer->setQuote($quoteTransfer);
     }
 }

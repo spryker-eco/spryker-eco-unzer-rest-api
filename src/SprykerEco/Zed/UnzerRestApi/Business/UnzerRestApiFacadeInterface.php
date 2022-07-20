@@ -7,7 +7,7 @@
 
 namespace SprykerEco\Zed\UnzerRestApi\Business;
 
-use Generated\Shared\Transfer\QuoteTransfer;
+use Generated\Shared\Transfer\RestCheckoutDataTransfer;
 
 interface UnzerRestApiFacadeInterface
 {
@@ -19,9 +19,9 @@ interface UnzerRestApiFacadeInterface
      *
      * @api
      *
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
+     * @param \Generated\Shared\Transfer\RestCheckoutDataTransfer $restCheckoutDataTransfer
      *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
+     * @return \Generated\Shared\Transfer\RestCheckoutDataTransfer
      */
-    public function expandQuoteWithUnzerCredentials(QuoteTransfer $quoteTransfer): QuoteTransfer;
+    public function expandCheckoutData(RestCheckoutDataTransfer $restCheckoutDataTransfer): RestCheckoutDataTransfer;
 }
