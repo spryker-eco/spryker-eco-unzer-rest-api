@@ -13,7 +13,7 @@ use SprykerEco\Zed\UnzerRestApi\Business\Expander\QuoteExpanderInterface;
 use SprykerEco\Zed\UnzerRestApi\UnzerRestApiDependencyProvider;
 
 /**
- * @method \Spryker\Zed\UnzerRestApi\UnzerRestApiConfig getConfig()
+ * @method \SprykerEco\Zed\UnzerRestApi\UnzerRestApiConfig getConfig()
  */
 class UnzerRestApiBusinessFactory extends AbstractBusinessFactory
 {

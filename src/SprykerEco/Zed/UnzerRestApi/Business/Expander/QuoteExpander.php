@@ -7,6 +7,7 @@
 
 namespace SprykerEco\Zed\UnzerRestApi\Business\Expander;
 
+use Generated\Shared\Transfer\QuoteTransfer;
 use SprykerEco\Zed\UnzerRestApi\Dependency\Facade\UnzerRestApiToUnzerFacadeInterface;
 
 class QuoteExpander implements QuoteExpanderInterface

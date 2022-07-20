@@ -14,6 +14,7 @@ use Spryker\Zed\Kernel\Communication\AbstractPlugin;
 
 /**
  * @method \SprykerEco\Zed\UnzerRestApi\Business\UnzerRestApiFacadeInterface getFacade()
+ * @method \SprykerEco\Zed\UnzerRestApi\UnzerRestApiConfig getConfig()
  */
 class UnzerCheckoutDataExpanderPlugin extends AbstractPlugin implements CheckoutDataExpanderPluginInterface
 {
