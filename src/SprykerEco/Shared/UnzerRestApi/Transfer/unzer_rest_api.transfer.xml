@@ -48,4 +48,13 @@
     <transfer name="RestCheckoutDataResponseAttributes">
         <property name="unzerPublicKey" type="string"/>
     </transfer>
+
+    <transfer name="CheckoutResponse">
+    </transfer>
+
+    <transfer name="CheckoutData">
+    </transfer>
+
+    <transfer name="RestCheckoutRequestAttributes">
+    </transfer>
 </transfers>
