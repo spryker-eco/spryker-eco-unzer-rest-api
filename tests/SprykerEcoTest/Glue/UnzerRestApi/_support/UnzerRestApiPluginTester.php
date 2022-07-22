@@ -1,8 +1,17 @@
 <?php
+
+/**
+ * MIT License
+ * For full license information, please view the LICENSE file that was distributed with this source code.
+ */
+
 namespace SprykerEcoTest\Glue\UnzerRestApi;
+
+use Codeception\Actor;
 
 /**
  * Inherited Methods
+ *
  * @method void wantToTest($text)
  * @method void wantTo($text)
  * @method void execute($callable)
@@ -15,8 +24,8 @@ namespace SprykerEcoTest\Glue\UnzerRestApi;
  * @method void pause()
  *
  * @SuppressWarnings(PHPMD)
-*/
-class UnzerRestApiPluginTester extends \Codeception\Actor
+ */
+class UnzerRestApiPluginTester extends Actor
 {
     use _generated\UnzerRestApiPluginTesterActions;
 

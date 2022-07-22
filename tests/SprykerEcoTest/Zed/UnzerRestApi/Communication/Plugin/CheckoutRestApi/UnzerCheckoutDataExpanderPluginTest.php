@@ -13,7 +13,6 @@ use Generated\Shared\DataBuilder\UnzerCredentialsBuilder;
 use Generated\Shared\Transfer\QuoteTransfer;
 use Generated\Shared\Transfer\RestCheckoutRequestAttributesTransfer;
 use SprykerEco\Zed\UnzerRestApi\Communication\Plugin\CheckoutRestApi\UnzerCheckoutDataExpanderPlugin;
-use SprykerEcoTest\Zed\UnzerRestApi\UnzerRestApiBusinessTester;
 
 /**
  * Auto-generated group annotations
@@ -46,7 +45,7 @@ class UnzerCheckoutDataExpanderPluginTest extends Test
         // Assert
         $this->assertSame(
             $unzerCredentailsTransfer->getUnzerKeypair()->getPublicKey(),
-            $restCheckoutDataTransfer->getQuote()->getUnzerCredentials()->getUnzerKeypair()->getPublicKey()
+            $restCheckoutDataTransfer->getQuote()->getUnzerCredentials()->getUnzerKeypair()->getPublicKey(),
         );
     }
 
@@ -63,8 +62,8 @@ class UnzerCheckoutDataExpanderPluginTest extends Test
         // Act
         $restCheckoutDataTransfer = $unzerCheckoutDataExpanderPlugin->expandCheckoutData(
             $restCheckoutDataTransfer,
-            $restCheckoutRequestAttributesTransfer)
-        ;
+            $restCheckoutRequestAttributesTransfer,
+        );
 
         // Assert
         $this->assertNull($restCheckoutDataTransfer->getQuote()->getUnzerCredentials());

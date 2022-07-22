@@ -12,7 +12,6 @@ use Generated\Shared\DataBuilder\RestCheckoutDataBuilder;
 use Generated\Shared\DataBuilder\UnzerCredentialsBuilder;
 use Generated\Shared\Transfer\QuoteTransfer;
 use Generated\Shared\Transfer\RestCheckoutDataResponseAttributesTransfer;
-use Generated\Shared\Transfer\RestCheckoutDataTransfer;
 use Generated\Shared\Transfer\RestCheckoutRequestAttributesTransfer;
 use SprykerEco\Glue\UnzerRestApi\Plugin\CheckoutRestApi\UnzerCheckoutDataResponseMapperPlugin;
 
@@ -52,7 +51,7 @@ class UnzerCheckoutDataResponseMapperPluginTest extends Unit
         // Assert
         $this->assertSame(
             $unzerCredentailsTransfer->getUnzerKeypair()->getPublicKey(),
-            $restCheckoutDataResponseAttributesTransfer->getUnzerPublicKey()
+            $restCheckoutDataResponseAttributesTransfer->getUnzerPublicKey(),
         );
     }
 

@@ -11,7 +11,6 @@ use Codeception\TestCase\Test;
 use Generated\Shared\DataBuilder\RestCheckoutDataBuilder;
 use Generated\Shared\DataBuilder\UnzerCredentialsBuilder;
 use Generated\Shared\Transfer\QuoteTransfer;
-use SprykerEcoTest\Zed\UnzerRestApi\UnzerRestApiBusinessTester;
 
 /**
  * Auto-generated group annotations
@@ -44,7 +43,7 @@ class ExpandCheckoutDataTest extends Test
         // Assert
         $this->assertSame(
             $unzerCredentailsTransfer->getUnzerKeypair()->getPublicKey(),
-            $restCheckoutDataTransfer->getQuote()->getUnzerCredentials()->getUnzerKeypair()->getPublicKey()
+            $restCheckoutDataTransfer->getQuote()->getUnzerCredentials()->getUnzerKeypair()->getPublicKey(),
         );
     }
 
