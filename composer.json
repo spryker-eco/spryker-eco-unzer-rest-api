@@ -25,8 +25,8 @@
         "spryker/propel": "*",
         "spryker/propel-orm": "*",
         "spryker/queue": "*",
-        "spryker/testify": "^3.43.0",
-        "spryker/quote": "*"
+        "spryker/quote": "*",
+        "spryker/testify": "^3.43.0"
     },
     "suggest": {
         "spryker/glue-application": "If you want to use plugins with glue application."
