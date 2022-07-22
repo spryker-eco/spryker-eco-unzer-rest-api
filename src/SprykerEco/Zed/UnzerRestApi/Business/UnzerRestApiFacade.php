@@ -8,11 +8,12 @@
 namespace SprykerEco\Zed\UnzerRestApi\Business;
 
 use Generated\Shared\Transfer\RestCheckoutDataTransfer;
+use Spryker\Zed\Kernel\Business\AbstractFacade;
 
 /**
  * @method \SprykerEco\Zed\UnzerRestApi\Business\UnzerRestApiBusinessFactory getFactory()
  */
-class UnzerRestApiFacade implements UnzerRestApiFacadeInterface
+class UnzerRestApiFacade extends AbstractFacade implements UnzerRestApiFacadeInterface
 {
     /**
      * {@inheritDoc}

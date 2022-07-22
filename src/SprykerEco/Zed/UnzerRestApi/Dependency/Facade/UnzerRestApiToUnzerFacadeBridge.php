@@ -8,16 +8,17 @@
 namespace SprykerEco\Zed\UnzerRestApi\Dependency\Facade;
 
 use Generated\Shared\Transfer\QuoteTransfer;
+use SprykerEco\Zed\Unzer\Business\UnzerFacade;
 
 class UnzerRestApiToUnzerFacadeBridge implements UnzerRestApiToUnzerFacadeInterface
 {
     /**
-     * @var \SprykerEco\Zed\UnzerRestApi\Dependency\Facade\UnzerRestApiToUnzerFacadeInterface
+     * @var \SprykerEco\Zed\Unzer\Business\UnzerFacadeInterface
      */
-    protected $unzerFacade;
+    protected UnzerFacade $unzerFacade;
 
     /**
-     * @param \SprykerEco\Zed\UnzerRestApi\Dependency\Facade\UnzerRestApiToUnzerFacadeInterface $unzerFacade
+     * @param \SprykerEco\Zed\Unzer\Business\UnzerFacadeInterface $unzerFacade
      */
     public function __construct($unzerFacade)
     {
