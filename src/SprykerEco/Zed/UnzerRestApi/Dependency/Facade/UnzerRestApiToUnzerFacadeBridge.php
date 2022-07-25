@@ -15,7 +15,7 @@ class UnzerRestApiToUnzerFacadeBridge implements UnzerRestApiToUnzerFacadeInterf
     /**
      * @var \SprykerEco\Zed\Unzer\Business\UnzerFacadeInterface
      */
-    protected UnzerFacade $unzerFacade;
+    protected $unzerFacade;
 
     /**
      * @param \SprykerEco\Zed\Unzer\Business\UnzerFacadeInterface $unzerFacade
