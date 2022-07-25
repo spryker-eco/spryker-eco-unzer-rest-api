@@ -33,6 +33,7 @@ class UnzerCheckoutDataResponseMapperPluginTest extends Unit
      */
     public function testMapRestCheckoutDataResponseTransferToRestCheckoutDataResponseAttributesTransferShouldMapPublicKeyWhileUnzerCredentialsSpecified(): void
     {
+        // Arrange
         $unzerCredentailsTransfer = (new UnzerCredentialsBuilder())->withUnzerKeypair()->build();
         $restCheckoutDataTransfer = (new RestCheckoutDataBuilder())->withQuote([
             QuoteTransfer::UNZER_CREDENTIALS => $unzerCredentailsTransfer->toArray(),
@@ -60,6 +61,7 @@ class UnzerCheckoutDataResponseMapperPluginTest extends Unit
      */
     public function testMapRestCheckoutDataResponseTransferToRestCheckoutDataResponseAttributesTransferShouldNotMapPublicKeyWhileUnzerCredentialsUnspecified(): void
     {
+        // Arrange
         $restCheckoutDataTransfer = (new RestCheckoutDataBuilder())->withQuote()->build();
         $restCheckoutRequestAttributesTransfer = new RestCheckoutRequestAttributesTransfer();
         $restCheckoutDataResponseAttributesTransfer = new RestCheckoutDataResponseAttributesTransfer();
