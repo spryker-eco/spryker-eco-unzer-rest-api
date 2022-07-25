@@ -8,7 +8,6 @@
 namespace SprykerEco\Zed\UnzerRestApi\Dependency\Facade;
 
 use Generated\Shared\Transfer\QuoteTransfer;
-use SprykerEco\Zed\Unzer\Business\UnzerFacade;
 
 class UnzerRestApiToUnzerFacadeBridge implements UnzerRestApiToUnzerFacadeInterface
 {
