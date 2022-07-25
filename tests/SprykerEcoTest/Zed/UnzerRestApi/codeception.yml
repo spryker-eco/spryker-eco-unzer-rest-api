@@ -20,6 +20,7 @@ suites:
                 - Asserts
                 - \SprykerTest\Shared\Testify\Helper\Environment:
                       isolated: true
+                - \SprykerTest\Zed\Testify\Helper\Business\BusinessHelper
                 - \SprykerTest\Shared\Testify\Helper\ConfigHelper
                 - \SprykerTest\Shared\Transfer\Helper\TransferGenerateHelper:
                       isolated: true
@@ -47,6 +48,7 @@ suites:
         modules:
             enabled:
                 - Asserts
+                - \SprykerTest\Zed\Testify\Helper\Business\BusinessHelper
                 - \SprykerTest\Shared\Testify\Helper\Environment:
                       isolated: true
                 - \SprykerTest\Shared\Testify\Helper\ConfigHelper
