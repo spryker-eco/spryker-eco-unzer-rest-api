@@ -36,11 +36,14 @@ class UnzerCheckoutDataExpanderPluginTest extends Test
         $restCheckoutDataTransfer = (new RestCheckoutDataBuilder())->withQuote([
             QuoteTransfer::UNZER_CREDENTIALS => $unzerCredentailsTransfer->toArray(),
         ])->build();
+        $restCheckoutRequestAttributesTransfer = new RestCheckoutRequestAttributesTransfer();
+        $unzerCheckoutDataExpanderPlugin = new UnzerCheckoutDataExpanderPlugin();
 
         // Act
-        $restCheckoutDataTransfer = $this->tester
-            ->getFacade()
-            ->expandCheckoutData($restCheckoutDataTransfer);
+        $restCheckoutDataTransfer = $unzerCheckoutDataExpanderPlugin->expandCheckoutData(
+            $restCheckoutDataTransfer,
+            $restCheckoutRequestAttributesTransfer,
+        );
 
         // Assert
         $this->assertSame(
